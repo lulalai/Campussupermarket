@@ -63,6 +63,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  z-index: 99;
   a{
     padding-bottom: 3px;
     padding-top: 7px;

@@ -7,8 +7,8 @@
             :class="{
               active: activeIndex === index
             }"
-            @click="(change(index))"
-           >{{item.text}}
+            @click="change(index)"
+           >{{item[tabName]}}
           </a>
       </nav>
   </div>
@@ -18,7 +18,11 @@
 export default {
   name: 'TabBar',
   props: {
-    hot_nav: Array
+    hot_nav: Array,
+    tabName: {
+      type: String,
+      default: 'text'
+    }
   },
   data () {
     return {
@@ -47,11 +51,13 @@ export default {
         height: 100%;
         justify-content: space-between;
         align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
         a{
-          display: flex;
-          flex: 1;
-          align-items: center;
-          justify-content: center;
+          // display: flex;
+          // flex: 1;
+          // align-items: center;
+          // justify-content: center;
           font-size: 16px;
           color: #4A4A4A;
           &.active{

@@ -41,7 +41,7 @@ export default {
       fetchProductParams: {
         page: 1,
         page_size: 10,
-        classid: 1
+        category_id: 1
       }
     }
   },
@@ -60,9 +60,9 @@ export default {
   },
   created () {
     this.$api.home.base().then(res => {
-      this.maowu = res.data.data.banner
-      this.tab = res.data.data.tab
-      this.hot_nav = res.data.data.hot_nav
+      this.maowu = res.data.banner
+      this.tab = res.data.tab
+      this.hot_nav = res.data.hot_nav
     })
     this.fetchProductList()
   },
@@ -87,18 +87,15 @@ export default {
     async fetchProductList () {
       const res = await this.$api.product.list(this.fetchProductParams)
       if (this.fetchProductParams.page === 1) {
-        this.products = res.data.data
+        this.products = res.data
       } else {
-        this.products = this.products.concat(res.data.data)
+        this.products = this.products.concat(res.data)
       }
     },
     navchange (index, item) {
-      this.fetchProductParams.classid = item.id
+      this.fetchProductParams.category_id = item.id
       this.fetchProductParams.page = 1
-      // const scrollTop = document.querySelector('html').scrollTop
-      // if (scrollTop > top) {
       window.scrollTo(0, this.$refs.content.offsetTop)
-      // }
     }
   }
 }

@@ -77,7 +77,6 @@ export default {
       // this.fetchProductParams.category_id = item.id
       if (this.fetchProductParams.page === 1) {
         this.products = res.data
-        console.log(this.products)
       } else {
         this.products = this.products.concat(res.data)
       }

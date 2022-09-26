@@ -28,6 +28,10 @@ const routes = [
         component: () => import('@/views/mine/mineBox')
       }
     ]
+  },
+  {
+    path: '/detailBox/:id',
+    component: () => import('@/views/detail/detailBox')
   }
 ]
 

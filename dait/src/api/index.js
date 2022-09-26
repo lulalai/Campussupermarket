@@ -6,7 +6,8 @@ const api = {
   },
   product: {
     list: (params) => axios.get('/product', params),
-    category: () => axios.get('/product/category')
+    category: () => axios.get('/product/category'),
+    detailBox: id => axios.get(`/product/${id}`)
   }
 }
 

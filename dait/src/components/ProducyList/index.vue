@@ -1,6 +1,6 @@
 <template>
 <div class="shangping">
-  <div class="commodit"  v-for="(item, index) in list" :key="index">
+  <router-link class="commodit"  v-for="(item, index) in list" :key="index" tag="div" :to="`/detailBox/${item.id}`"  >
       <div class="img">
           <img :src="item.img" alt="">
       </div>
@@ -23,7 +23,7 @@
               </div>
           </div>
       </div>
-  </div>
+  </router-link>
 </div>
 </template>
 
